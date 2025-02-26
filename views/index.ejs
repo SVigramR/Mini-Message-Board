@@ -1,12 +1,16 @@
 <html>
+    <head>
+        <title>Mini Messenger</title>
+    </head>
     <body>
-        <h1><%= title %></h1>
+        <%- include('header', { links: links }) %>
         <div>
             <% for (let i = 0; i < messages.length; i++) { %>
                 <div>
                     <div><%= messages[i].text %></div>
                     <div><%= messages[i].user %></div>
                     <div><%= messages[i].added %></div>
+                    <button>Open</button>
                 </div>
               <% } %>
         </div>

@@ -1,4 +1,5 @@
 const { Router } = require("express")
+const links = require("./links")
 
 const indexRouter = Router();
 
@@ -14,10 +15,9 @@ const messages = [
       added: new Date()
     }
   ];
-  
 
 indexRouter.get("/", (req, res) => {
-  res.render("index", { title: "Mini Messageboard", messages: messages });
+  res.render("index", { title: "Mini Messageboard", messages: messages, links: links });
 });
 
 indexRouter.post("/new",(req, res) => {
