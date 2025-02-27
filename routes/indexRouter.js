@@ -1,5 +1,6 @@
 const { Router } = require("express")
 const links = require("./links")
+const formatDate = require("./date")
 
 const indexRouter = Router();
 
@@ -7,12 +8,12 @@ const messages = [
     {
       text: "Amazing!",
       user: "Jake",
-      added: new Date()
+      added: formatDate(new Date())
     },
     {
       text: "Howdy!",
       user: "Marco",
-      added: new Date()
+      added: formatDate(new Date())
     }
   ];
 
@@ -23,7 +24,8 @@ indexRouter.get("/", (req, res) => {
 indexRouter.post("/new",(req, res) => {
   const messageText = req.body.messageText;
   const messageUser = req.body.messageUser;
-  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  const messageAdded = formatDate(new Date().toString());
+  messages.push({ text: messageText, user: messageUser, added: messageAdded });
   res.redirect("/")
 })
 
