@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>Mini Messenger - Message Details</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%- include('header', { links: links }) %>
+    
+    <div class="detailsContainer">
+      <h2>Message Details</h2>
+      
+      <div class="messageDetail">
+        <div class="detailLabel">Message:</div>
+        <div class="detailContent"><%= message.text %></div>
+      </div>
+      
+      <div class="messageDetail">
+        <div class="detailLabel">Posted By:</div>
+        <div class="detailContent"><%= message.user %></div>
+      </div>
+      
+      <div class="messageDetail">
+        <div class="detailLabel">Date:</div>
+        <div class="detailContent"><%= message.added %></div>
+      </div>
+      
+      <div class="buttonContainer">
+        <a class="backButton" href="/">Back to Messages</a>
+      </div>
+    </div>
+  </body>
+</html>

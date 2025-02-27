@@ -15,7 +15,7 @@
                         <div class="userName">Posted By <%= messages[i].user %></div>
                         <div class="date">On <%= messages[i].added %></div>
                     </div>
-                    <button class="detailsBtn">Open</button>
+                    <a class="detailsBtn" href="/details:<%= i %>">Open</a>
                 </div>
               <% } %>
         </div>

@@ -12,12 +12,16 @@ body {
     margin: auto;
 }
 
+h1 {
+    color: #4a5568;
+}
+
 nav {
     display: flex;
     align-items: first baseline;
     justify-content: space-between;
     margin: 2rem;
-    border-radius: 3rem;
+    border-radius: 4px;
     background-color: white;
     padding: 1.2rem 4rem 1.2rem 4rem;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -33,7 +37,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #4a5568;
     font-weight: 600;
 }
 
@@ -56,7 +60,7 @@ form {
 input {
     border: none;
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 4px;
     font-size: 1rem;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
@@ -65,10 +69,10 @@ input {
     font-size: 1rem;
     font-weight: 800;
     border: none;
-    background-color: black;
+    background-color: #4a5568;
     color: white;
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 4px;
     width: 8rem;
     cursor: pointer;
 }
@@ -88,7 +92,7 @@ input {
     margin: auto;
     max-height: 70vh; /* Set a fixed height or max-height */
     overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 10px; /* Add some padding for the scrollbar */
+    padding: 1rem /* Add some padding for the scrollbar */
 }
 
 .messageContainer {
@@ -96,7 +100,7 @@ input {
     background-color: white;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -125,11 +129,13 @@ input {
     font-size: 10px;
     font-weight: 800;
     border: none;
-    background-color: black;
+    background-color: #4a5568;
     color: white;
-    padding: 5px;
-    border-radius: 2rem;
+    padding: 10px;
+    border-radius: 4px;
     width: 8rem;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -157,10 +163,10 @@ input {
     font-size: 1rem;
     font-weight: 800;
     border: none;
-    background-color: black;
+    background-color: #4a5568;
     color: white;
     padding: 14px;
-    border-radius: 2rem;
+    border-radius: 4px;
     cursor: pointer;
     display: block;
     margin: 0 auto; 
@@ -182,3 +188,48 @@ input {
     width: 100%;
     padding: 0 1rem;
 }
+
+/* Details page style */
+h2 {
+    margin-bottom: 1rem;
+}
+
+.detailsContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .messageDetail {
+    margin-bottom: 15px;
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .detailLabel {
+    font-weight: bold;
+    width: 100px;
+    flex-shrink: 0;
+  }
+  
+  .detailContent {
+    flex-grow: 1;
+  }
+  
+  .backButton {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4a5568;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  
+  .backButton:hover {
+    background-color: #2d3748;
+  }
