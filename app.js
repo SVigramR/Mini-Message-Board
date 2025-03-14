@@ -3,6 +3,7 @@ const app = express();
 const path = require("node:path");
 const newRouter = require("./routes/newRouter");
 const indexRouter = require("./routes/indexRouter");
+const getPgVersion = require("./db/queries");
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
@@ -18,3 +19,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Mini Message Board`)
 });
+
+getPgVersion()
