@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS messages (
  message TEXT,
  added DATE
 );
-INSERT INTO messages (name, message, posted)
+INSERT INTO messages (name, message, added)
 VALUES
  ('Jake', 'Amazing!','2025-03-13'),
  ('Marco', 'Howdy!', '2025-03-13')
