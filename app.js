@@ -3,7 +3,7 @@ const app = express();
 const path = require("node:path");
 const newRouter = require("./routes/newRouter");
 const indexRouter = require("./routes/indexRouter");
-const getPgVersion = require("./db/queries");
+const queries = require("./db/queries");
 const populateMessages = require("./controllers/populateMessages");
 
 const assetsPath = path.join(__dirname, "public");
@@ -22,4 +22,4 @@ app.listen(PORT, () => {
 });
 
 populateMessages()
-getPgVersion()
+queries.getPgVersion()

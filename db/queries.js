@@ -10,4 +10,14 @@ async function getPgVersion() {
     }
 }
 
-module.exports = getPgVersion;
+async function insertMessage(message) {
+  return await pool.query(
+    "INSERT INTO messages (name, message, added) VALUES ($1, $2, NOW()) RETURNING *", 
+    [message.name, message.message]
+  );
+}
+
+module.exports = {
+  getPgVersion,
+  insertMessage
+};

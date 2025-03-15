@@ -2,6 +2,7 @@ const { Router } = require("express")
 const links = require("./links")
 const formatDate = require("./date")
 const messages = require("./messages")
+const queries = require("../db/queries")
 
 const indexRouter = Router();
 
@@ -9,11 +10,13 @@ indexRouter.get("/", (req, res) => {
   res.render("index", { title: "Mini Messageboard", messages: messages, links: links });
 });
 
-indexRouter.post("/new",(req, res) => {
+indexRouter.post("/new",async (req, res) => {
   const messageText = req.body.messageText;
   const messageUser = req.body.messageUser;
   const messageAdded = formatDate(new Date().toString());
-  messages.push({ message: messageText, name: messageUser, added: messageAdded });
+  const messageObj = { message: messageText, name: messageUser, added: messageAdded }
+  messages.push(messageObj);
+  await queries.insertMessage(messageObj);
   res.redirect("/")
 })
 
