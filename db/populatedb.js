@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS messages (
  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
  name VARCHAR ( 255 ),
  message TEXT,
- posted DATE
+ added DATE
 );
 INSERT INTO messages (name, message, posted)
 VALUES

@@ -10,9 +10,9 @@
         <div class="topContainer">
             <% for (let i = 0; i < messages.length; i++) { %>
                 <div class="messageContainer">
-                    <div class="textMessage"><%= messages[i].text %></div>
+                    <div class="textMessage"><%= messages[i].message %></div>
                     <div class="userHolder">
-                        <div class="userName">Posted By <%= messages[i].user %></div>
+                        <div class="userName">Posted By <%= messages[i].name %></div>
                         <div class="date">On <%= messages[i].added %></div>
                     </div>
                     <a class="detailsBtn" href="/details:<%= i %>">Open</a>

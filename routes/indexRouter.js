@@ -1,21 +1,9 @@
 const { Router } = require("express")
 const links = require("./links")
 const formatDate = require("./date")
+const messages = require("./messages")
 
 const indexRouter = Router();
-
-const messages = [
-    {
-      text: "Amazing!",
-      user: "Jake",
-      added: formatDate(new Date())
-    },
-    {
-      text: "Howdy!",
-      user: "Marco",
-      added: formatDate(new Date())
-    }
-  ];
 
 indexRouter.get("/", (req, res) => {
   res.render("index", { title: "Mini Messageboard", messages: messages, links: links });
@@ -25,7 +13,7 @@ indexRouter.post("/new",(req, res) => {
   const messageText = req.body.messageText;
   const messageUser = req.body.messageUser;
   const messageAdded = formatDate(new Date().toString());
-  messages.push({ text: messageText, user: messageUser, added: messageAdded });
+  messages.push({ message: messageText, name: messageUser, added: messageAdded });
   res.redirect("/")
 })
 
@@ -43,5 +31,5 @@ indexRouter.get("/details:id", (req, res) => {
     res.status(404).send("Message not found");
   }
 });
- 
+
 module.exports = indexRouter;

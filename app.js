@@ -4,6 +4,7 @@ const path = require("node:path");
 const newRouter = require("./routes/newRouter");
 const indexRouter = require("./routes/indexRouter");
 const getPgVersion = require("./db/queries");
+const populateMessages = require("./controllers/populateMessages");
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
@@ -20,4 +21,5 @@ app.listen(PORT, () => {
     console.log(`Mini Message Board`)
 });
 
+populateMessages()
 getPgVersion()
